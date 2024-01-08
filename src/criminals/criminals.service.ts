@@ -1,6 +1,8 @@
 import { Criminals, CriminalsType } from "./criminals.model";
 import { Request, Response } from "express";
 
+const member: CriminalsType[] = [];
+
 export const readAllcriminals = (req: Request, res: Response) => {
   try {
     const criminals = Criminals;
@@ -19,13 +21,15 @@ export const readAllcriminals = (req: Request, res: Response) => {
 export const readCriminals = (req: Request, res: Response) => {
   try {
     const params = req.params;
-    const criminals = Criminals.find((criminals) => {
-      return criminals.name === params.id;
+    Criminals.forEach((criminals) => {
+      if (criminals.name === params.name) {
+        member.push(criminals);
+      }
     });
     res.status(200).send({
       success: true,
       data: {
-        criminals,
+        member,
       },
     });
   } catch (error) {

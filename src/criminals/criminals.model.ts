@@ -24,4 +24,10 @@ export const Criminals: CriminalsType[] = [
     age: 24,
     character: "Nice",
   },
+  {
+    id: 4,
+    name: "hyunho",
+    age: 24,
+    character: "Nice",
+  },
 ];

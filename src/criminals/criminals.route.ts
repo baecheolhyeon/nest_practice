@@ -9,6 +9,6 @@ import {
 const router = Router();
 
 router.get("/", readAllcriminals);
-router.get("/:id", readCriminals);
+router.get("/:name", readCriminals);
 router.post("/criminal", writeCriminals);
 export default router;

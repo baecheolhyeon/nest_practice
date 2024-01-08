@@ -2,6 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.writeCriminals = exports.readCriminals = exports.readAllcriminals = void 0;
 var criminals_model_1 = require("./criminals.model");
+var member = [];
 var readAllcriminals = function (req, res) {
     try {
         var criminals = criminals_model_1.Criminals;
@@ -21,13 +22,15 @@ exports.readAllcriminals = readAllcriminals;
 var readCriminals = function (req, res) {
     try {
         var params_1 = req.params;
-        var criminals = criminals_model_1.Criminals.find(function (criminals) {
-            return criminals.name === params_1.id;
+        criminals_model_1.Criminals.forEach(function (criminals) {
+            if (criminals.name === params_1.name) {
+                member.push(criminals);
+            }
         });
         res.status(200).send({
             success: true,
             data: {
-                criminals: criminals,
+                member: member,
             },
         });
     }
