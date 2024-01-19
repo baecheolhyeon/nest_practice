@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "name": "nest_test",
   "version": "0.0.1",
   "description": "",
@@ -79,5 +80,23 @@
     ],
     "coverageDirectory": "../coverage",
     "testEnvironment": "node"
+=======
+  "scripts": {
+    "build": "tsc",
+    "start:dev": "tsc-watch --onSuccess \"node dist/app.js\"",
+    "prestart": "npm run build",
+    "start": "node dist/app.js"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^15.3.0",
+    "prettier": "^2.2.1",
+    "tsc": "^2.0.3",
+    "tsc-watch": "^4.2.9",
+    "typescript": "^4.3.4"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+>>>>>>> 23ff21f6965d34fecfff25acea2315046630b384
   }
 }
